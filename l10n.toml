@@ -1,0 +1,32 @@
+# General project settings
+base_dir = "."  # Root directory for localization files
+locales = ["sk", "cs", "de", "ar", "it", "nl", "pt", "sv-SE", "en", "ca", "es"]
+
+# Define Git repository settings for Pontoon
+[[repositories]]
+type = "git"
+url = "https://github.com/ovrbach/decoder-locale.git"  # Replace with the actual Git repository URL
+branch = "main"  # Default branch for localization changes, such as "main" or "master"
+
+# ==============================
+# Android Configuration
+# ==============================
+
+[[source]]
+name = "Decoder-app"
+# Specify path format for Android `strings.xml` files, matching Android's locale directory structure
+path = "res/values-{locale}/strings.xml"
+# Map Pontoon locale codes to Android's locale directory structure
+locales = [
+    { code = "sk", path = "sk" },
+    { code = "cs", path = "cs" },
+    { code = "de", path = "de" },
+    { code = "ar", path = "ar" },
+    { code = "it", path = "it" },
+    { code = "nl", path = "nl" },
+    { code = "pt", path = "pt" },
+    { code = "sv-SE", path = "sv-rSE" },  # Note: Android uses `r` for region codes
+    { code = "en", path = "en" },
+    { code = "ca", path = "ca" },
+    { code = "es", path = "es" }
+]
